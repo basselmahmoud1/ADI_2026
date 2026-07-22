@@ -1,4 +1,3 @@
-# ADI_Summer_intern_2026
 
 # ADI Summer Intern 2026
 
