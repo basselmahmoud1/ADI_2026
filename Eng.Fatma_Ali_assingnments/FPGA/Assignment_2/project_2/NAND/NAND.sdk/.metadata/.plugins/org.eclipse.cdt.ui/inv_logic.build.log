@@ -1,0 +1,28 @@
+23:14:09 **** Build of configuration Release for project inv_logic ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/inv_logic.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O2 -c -fmessage-length=0 -MT"src/inv_logic.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../inv_logic_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/inv_logic.d" -MT"src/inv_logic.o" -o "src/inv_logic.o" "../src/inv_logic.c"
+'Finished building: ../src/inv_logic.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O2 -c -fmessage-length=0 -MT"src/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../inv_logic_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: inv_logic.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../inv_logic_bsp/ps7_cortexa9_0/lib -o "inv_logic.elf"  ./src/inv_logic.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: inv_logic.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size inv_logic.elf  |tee "inv_logic.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  20316	   1176	  22584	  44076	   ac2c	inv_logic.elf
+'Finished building: inv_logic.elf.size'
+' '
+
+23:14:11 Build Finished (took 2s.131ms)
+
