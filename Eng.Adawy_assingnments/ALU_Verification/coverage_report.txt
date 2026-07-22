@@ -1,0 +1,274 @@
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /top/dut
+=== Design Unit: work.ALU
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         7         7         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /top/dut
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ALU.sv
+------------------------------------CASE Branch------------------------------------
+    52                                     10036     Count coming in to CASE
+    53              1                       2884     
+    57              1                       2883     
+    62              1                       2073     
+    63              1                       2195     
+    64              1                          1     
+Branch totals: 5 hits of 5 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    72                                      9998     Count coming in to IF
+    72              1                       1017     
+    79              1                       8981     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Expression Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                      6         6         0   100.00%
+
+================================Expression Details================================
+
+Expression Coverage for instance /top/dut --
+
+  File ALU.sv
+-----------Focused Expression View (Bimodal)------------
+Line       55 Item    1  ((a[3] ~^ b[3]) & (result_n[3] ^ a[3]))
+Expression totals: 3 of 3 input terms covered = 100.00%
+
+     Input Term   Covered  Reason for no coverage                  Hint
+    -----------  --------  --------------------------------------  --------------
+           a[3]         Y
+           b[3]         Y
+    result_n[3]         Y
+
+    Rows:   Hits(->0)   Hits(->1)  FEC Target            Non-masking condition(s)            
+
+---------  ----------  ----------  --------------------  -------------------------           
+ Row   1:           1           1  a[3]_0                (result_n[3] ^ a[3]), (a[3] ~^ b[3])
+ Row   2:           1           0  a[3]_1                (result_n[3] ^ a[3]), (a[3] ~^ b[3])
+ Row   3:           1           1  b[3]_0                (result_n[3] ^ a[3])                
+ Row   4:           0           1  b[3]_1                (result_n[3] ^ a[3])                
+ Row   5:           1           0  result_n[3]_0         (a[3] ~^ b[3])                      
+ Row   6:           1           1  result_n[3]_1         (a[3] ~^ b[3])                      
+
+-----------Focused Expression View (Bimodal)------------
+Line       60 Item    1  ((a[3] ^ b[3]) & (result_n[3] ^ a[3]))
+Expression totals: 3 of 3 input terms covered = 100.00%
+
+     Input Term   Covered  Reason for no coverage                  Hint
+    -----------  --------  --------------------------------------  --------------
+           a[3]         Y
+           b[3]         Y
+    result_n[3]         Y
+
+    Rows:   Hits(->0)   Hits(->1)  FEC Target            Non-masking condition(s)           
+
+---------  ----------  ----------  --------------------  -------------------------          
+ Row   1:           0           1  a[3]_0                (result_n[3] ^ a[3]), (a[3] ^ b[3])
+ Row   2:           1           1  a[3]_1                (result_n[3] ^ a[3]), (a[3] ^ b[3])
+ Row   3:           0           1  b[3]_0                (result_n[3] ^ a[3])               
+ Row   4:           1           0  b[3]_1                (result_n[3] ^ a[3])               
+ Row   5:           0           1  result_n[3]_0         (a[3] ^ b[3])                      
+ Row   6:           1           0  result_n[3]_1         (a[3] ^ b[3])                      
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      24        24         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /top/dut --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ALU.sv
+    47              1                      10036     
+    48              1                      10036     
+    49              1                      10036     
+    50              1                      10036     
+    54              1                       2884     
+    55              1                       2884     
+    59              1                       2883     
+    60              1                       2883     
+    62              1                       2073     
+    63              1                       2195     
+    64              1                          1     
+    67              1                      10036     
+    68              1                      10036     
+    71              1                       9998     
+    73              1                       1017     
+    74              1                       1017     
+    75              1                       1017     
+    76              1                       1017     
+    77              1                       1017     
+    80              1                       8981     
+    81              1                       8981     
+    82              1                       8981     
+    83              1                       8981     
+    84              1                       8981     
+
+=================================================================================
+=== Instance: /pack
+=== Design Unit: work.pack
+=================================================================================
+
+Covergroup Coverage:
+    Covergroups                      1        na        na   100.00%
+        Coverpoints/Crosses          8        na        na        na
+            Covergroup Bins         28        28         0   100.00%
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /pack/class_based_subscriber/transaction_cg     100.00%        100          -    Covered              
+    covered/total bins:                                    28         28          -                      
+    missing/total bins:                                     0         28          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_a                                   100.00%        100          -    Covered              
+        covered/total bins:                                 7          7          -                      
+        missing/total bins:                                 0          7          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin corner[-8]                                    748          1          -    Covered              
+        bin corner[-7]                                    705          1          -    Covered              
+        bin corner[-1]                                    671          1          -    Covered              
+        bin corner[0]                                     923          1          -    Covered              
+        bin corner[1]                                     675          1          -    Covered              
+        bin corner[6]                                     669          1          -    Covered              
+        bin corner[7]                                     693          1          -    Covered              
+    Coverpoint cp_b                                   100.00%        100          -    Covered              
+        covered/total bins:                                 7          7          -                      
+        missing/total bins:                                 0          7          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin corner[-8]                                    730          1          -    Covered              
+        bin corner[-7]                                    734          1          -    Covered              
+        bin corner[-1]                                    683          1          -    Covered              
+        bin corner[0]                                     892          1          -    Covered              
+        bin corner[1]                                     669          1          -    Covered              
+        bin corner[6]                                     714          1          -    Covered              
+        bin corner[7]                                     697          1          -    Covered              
+    Coverpoint cp_opcode                              100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin op[ALU_ADD]                                  2890          1          -    Covered              
+        bin op[ALU_SUB]                                  2885          1          -    Covered              
+        bin op[ALU_AND]                                  2074          1          -    Covered              
+        bin op[ALU_OR]                                   2199          1          -    Covered              
+    Coverpoint cp_rst                                 100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin active                                       1020          1          -    Covered              
+        bin inactive                                     9028          1          -    Covered              
+    Coverpoint cp_z                                   100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin b[0]                                         7255          1          -    Covered              
+        bin b[1]                                         2793          1          -    Covered              
+    Coverpoint cp_n                                   100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin b[0]                                         5928          1          -    Covered              
+        bin b[1]                                         4120          1          -    Covered              
+    Coverpoint cp_c                                   100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin b[0]                                         7630          1          -    Covered              
+        bin b[1]                                         2418          1          -    Covered              
+    Coverpoint cp_v                                   100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin b[0]                                         8441          1          -    Covered              
+        bin b[1]                                         1607          1          -    Covered              
+
+COVERGROUP COVERAGE:
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /pack/class_based_subscriber/transaction_cg     100.00%        100          -    Covered              
+    covered/total bins:                                    28         28          -                      
+    missing/total bins:                                     0         28          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_a                                   100.00%        100          -    Covered              
+        covered/total bins:                                 7          7          -                      
+        missing/total bins:                                 0          7          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin corner[-8]                                    748          1          -    Covered              
+        bin corner[-7]                                    705          1          -    Covered              
+        bin corner[-1]                                    671          1          -    Covered              
+        bin corner[0]                                     923          1          -    Covered              
+        bin corner[1]                                     675          1          -    Covered              
+        bin corner[6]                                     669          1          -    Covered              
+        bin corner[7]                                     693          1          -    Covered              
+    Coverpoint cp_b                                   100.00%        100          -    Covered              
+        covered/total bins:                                 7          7          -                      
+        missing/total bins:                                 0          7          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin corner[-8]                                    730          1          -    Covered              
+        bin corner[-7]                                    734          1          -    Covered              
+        bin corner[-1]                                    683          1          -    Covered              
+        bin corner[0]                                     892          1          -    Covered              
+        bin corner[1]                                     669          1          -    Covered              
+        bin corner[6]                                     714          1          -    Covered              
+        bin corner[7]                                     697          1          -    Covered              
+    Coverpoint cp_opcode                              100.00%        100          -    Covered              
+        covered/total bins:                                 4          4          -                      
+        missing/total bins:                                 0          4          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin op[ALU_ADD]                                  2890          1          -    Covered              
+        bin op[ALU_SUB]                                  2885          1          -    Covered              
+        bin op[ALU_AND]                                  2074          1          -    Covered              
+        bin op[ALU_OR]                                   2199          1          -    Covered              
+    Coverpoint cp_rst                                 100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin active                                       1020          1          -    Covered              
+        bin inactive                                     9028          1          -    Covered              
+    Coverpoint cp_z                                   100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin b[0]                                         7255          1          -    Covered              
+        bin b[1]                                         2793          1          -    Covered              
+    Coverpoint cp_n                                   100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin b[0]                                         5928          1          -    Covered              
+        bin b[1]                                         4120          1          -    Covered              
+    Coverpoint cp_c                                   100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin b[0]                                         7630          1          -    Covered              
+        bin b[1]                                         2418          1          -    Covered              
+    Coverpoint cp_v                                   100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin b[0]                                         8441          1          -    Covered              
+        bin b[1]                                         1607          1          -    Covered              
+
+TOTAL COVERGROUP COVERAGE: 100.00%  COVERGROUP TYPES: 1
+
+Total Coverage By Instance (filtered view): 100.00%
+

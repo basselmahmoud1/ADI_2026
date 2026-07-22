@@ -1,0 +1,6 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1784728508" />
+    <testcase name="ALU_test" classname="test" file="/mnt/d/courses/Digital/ADI/ADI_Summer_intern_2026/Eng.Adawy_assingnments/coco_tb_task/test.py" lineno="229" time="0.004216909408569336" sim_time_ns="120.0" ratio_time="28456.859840560865" />
+  </testsuite>
+</testsuites>

@@ -1,0 +1,11 @@
+QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+Start time: 01:20:31 on Jul 16,2026
+vlog -reportprogress 300 Top.sv -l sim.log 
+-- Compiling module top
+-- Importing package ALU_pkg
+-- Importing package pack
+
+Top level modules:
+	top
+End time: 01:20:31 on Jul 16,2026, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
