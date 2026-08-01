@@ -6,5 +6,6 @@ This folder groups the assignment materials for Eng. Fatma Ali.
 
 - `FPGA`: FPGA assignment files and notes
 - `AHB`: AHB assignment files and notes
+- `SPI`: SPI assignment files and notes
 
 Please open the README inside each folder for branch-specific instructions.
