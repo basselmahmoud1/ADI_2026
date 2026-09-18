@@ -1,0 +1,2 @@
+var g_data = {"17":["work.BUTTERFLY",100.00,1],"19":["work.Complex_MULT",88.37,1],"13":["work.Control_unit",94.71,1],"14":["work.Counter",100.00,1],"18":["work.DELAY",100.00,1],"12":["work.FFT_Top",46.10,1],"16":["work.SDF_STAGE",95.96,1],"15":["work.Twiddle_ROM",80.00,1],"4":["work.fft_agent_pkg",16.57,1],"5":["work.fft_env_pkg",37.57,1],"1":["work.fft_interface",97.68,1],"6":["work.fft_test_pkg",49.88,1],"9":["work.top",100.00,1]};
+processDuLinks(g_data);

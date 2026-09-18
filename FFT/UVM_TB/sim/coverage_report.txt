@@ -1,0 +1,200 @@
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /fft_env_pkg
+=== Design Unit: work.fft_env_pkg
+=================================================================================
+
+Covergroup Coverage:
+    Covergroups                      1        na        na   100.00%
+        Coverpoints/Crosses          3        na        na        na
+            Covergroup Bins         23        23         0   100.00%
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /fft_env_pkg/fft_subscriber/cg_fft_inputs       100.00%        100          -    Covered              
+    covered/total bins:                                    23         23          -                      
+    missing/total bins:                                     0         23          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_re                                  100.00%        100          -    Covered              
+        covered/total bins:                                 5          5          -                      
+        missing/total bins:                                 0          5          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin zero                                           53          1          -    Covered              
+        bin max_pos                                         3          1          -    Covered              
+        bin min_neg                                         3          1          -    Covered              
+        bin positive                                       31          1          -    Covered              
+        bin negative                                       30          1          -    Covered              
+    Coverpoint cp_im                                  100.00%        100          -    Covered              
+        covered/total bins:                                 5          5          -                      
+        missing/total bins:                                 0          5          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin zero                                           96          1          -    Covered              
+        bin max_pos                                         1          1          -    Covered              
+        bin min_neg                                         1          1          -    Covered              
+        bin positive                                       12          1          -    Covered              
+        bin negative                                       10          1          -    Covered              
+    Cross #cross__0#                                  100.00%        100          -    Covered              
+        covered/total bins:                                13         13          -                      
+        missing/total bins:                                 0         13          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <zero,min_neg>                              1          1          -    Covered              
+            bin <zero,max_pos>                              1          1          -    Covered              
+            bin <max_pos,zero>                              3          1          -    Covered              
+            bin <min_neg,zero>                              3          1          -    Covered              
+            bin <negative,negative>                         4          1          -    Covered              
+            bin <positive,negative>                         5          1          -    Covered              
+            bin <zero,negative>                             1          1          -    Covered              
+            bin <negative,positive>                         6          1          -    Covered              
+            bin <positive,positive>                         5          1          -    Covered              
+            bin <zero,positive>                             1          1          -    Covered              
+            bin <negative,zero>                            20          1          -    Covered              
+            bin <positive,zero>                            21          1          -    Covered              
+            bin <zero,zero>                                49          1          -    Covered              
+        Illegal and Ignore Bins:
+            ignore_bin extreme_im_nonzero_re                0                     -    ZERO                 
+            ignore_bin extreme_re_nonzero_im                0                     -    ZERO                 
+ Covergroup instance \/fft_env_pkg::fft_subscriber::cg_fft_inputs  
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    23         23          -                      
+    missing/total bins:                                     0         23          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_re                                  100.00%        100          -    Covered              
+        covered/total bins:                                 5          5          -                      
+        missing/total bins:                                 0          5          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin zero                                           53          1          -    Covered              
+        bin max_pos                                         3          1          -    Covered              
+        bin min_neg                                         3          1          -    Covered              
+        bin positive                                       31          1          -    Covered              
+        bin negative                                       30          1          -    Covered              
+    Coverpoint cp_im                                  100.00%        100          -    Covered              
+        covered/total bins:                                 5          5          -                      
+        missing/total bins:                                 0          5          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin zero                                           96          1          -    Covered              
+        bin max_pos                                         1          1          -    Covered              
+        bin min_neg                                         1          1          -    Covered              
+        bin positive                                       12          1          -    Covered              
+        bin negative                                       10          1          -    Covered              
+    Cross #cross__0#                                  100.00%        100          -    Covered              
+        covered/total bins:                                13         13          -                      
+        missing/total bins:                                 0         13          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <zero,min_neg>                              1          1          -    Covered              
+            bin <zero,max_pos>                              1          1          -    Covered              
+            bin <max_pos,zero>                              3          1          -    Covered              
+            bin <min_neg,zero>                              3          1          -    Covered              
+            bin <negative,negative>                         4          1          -    Covered              
+            bin <positive,negative>                         5          1          -    Covered              
+            bin <zero,negative>                             1          1          -    Covered              
+            bin <negative,positive>                         6          1          -    Covered              
+            bin <positive,positive>                         5          1          -    Covered              
+            bin <zero,positive>                             1          1          -    Covered              
+            bin <negative,zero>                            20          1          -    Covered              
+            bin <positive,zero>                            21          1          -    Covered              
+            bin <zero,zero>                                49          1          -    Covered              
+        Illegal and Ignore Bins:
+            ignore_bin extreme_im_nonzero_re                0                     -    ZERO                 
+            ignore_bin extreme_re_nonzero_im                0                     -    ZERO                 
+
+COVERGROUP COVERAGE:
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /fft_env_pkg/fft_subscriber/cg_fft_inputs       100.00%        100          -    Covered              
+    covered/total bins:                                    23         23          -                      
+    missing/total bins:                                     0         23          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_re                                  100.00%        100          -    Covered              
+        covered/total bins:                                 5          5          -                      
+        missing/total bins:                                 0          5          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin zero                                           53          1          -    Covered              
+        bin max_pos                                         3          1          -    Covered              
+        bin min_neg                                         3          1          -    Covered              
+        bin positive                                       31          1          -    Covered              
+        bin negative                                       30          1          -    Covered              
+    Coverpoint cp_im                                  100.00%        100          -    Covered              
+        covered/total bins:                                 5          5          -                      
+        missing/total bins:                                 0          5          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin zero                                           96          1          -    Covered              
+        bin max_pos                                         1          1          -    Covered              
+        bin min_neg                                         1          1          -    Covered              
+        bin positive                                       12          1          -    Covered              
+        bin negative                                       10          1          -    Covered              
+    Cross #cross__0#                                  100.00%        100          -    Covered              
+        covered/total bins:                                13         13          -                      
+        missing/total bins:                                 0         13          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <zero,min_neg>                              1          1          -    Covered              
+            bin <zero,max_pos>                              1          1          -    Covered              
+            bin <max_pos,zero>                              3          1          -    Covered              
+            bin <min_neg,zero>                              3          1          -    Covered              
+            bin <negative,negative>                         4          1          -    Covered              
+            bin <positive,negative>                         5          1          -    Covered              
+            bin <zero,negative>                             1          1          -    Covered              
+            bin <negative,positive>                         6          1          -    Covered              
+            bin <positive,positive>                         5          1          -    Covered              
+            bin <zero,positive>                             1          1          -    Covered              
+            bin <negative,zero>                            20          1          -    Covered              
+            bin <positive,zero>                            21          1          -    Covered              
+            bin <zero,zero>                                49          1          -    Covered              
+        Illegal and Ignore Bins:
+            ignore_bin extreme_im_nonzero_re                0                     -    ZERO                 
+            ignore_bin extreme_re_nonzero_im                0                     -    ZERO                 
+ Covergroup instance \/fft_env_pkg::fft_subscriber::cg_fft_inputs  
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    23         23          -                      
+    missing/total bins:                                     0         23          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint cp_re                                  100.00%        100          -    Covered              
+        covered/total bins:                                 5          5          -                      
+        missing/total bins:                                 0          5          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin zero                                           53          1          -    Covered              
+        bin max_pos                                         3          1          -    Covered              
+        bin min_neg                                         3          1          -    Covered              
+        bin positive                                       31          1          -    Covered              
+        bin negative                                       30          1          -    Covered              
+    Coverpoint cp_im                                  100.00%        100          -    Covered              
+        covered/total bins:                                 5          5          -                      
+        missing/total bins:                                 0          5          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin zero                                           96          1          -    Covered              
+        bin max_pos                                         1          1          -    Covered              
+        bin min_neg                                         1          1          -    Covered              
+        bin positive                                       12          1          -    Covered              
+        bin negative                                       10          1          -    Covered              
+    Cross #cross__0#                                  100.00%        100          -    Covered              
+        covered/total bins:                                13         13          -                      
+        missing/total bins:                                 0         13          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <zero,min_neg>                              1          1          -    Covered              
+            bin <zero,max_pos>                              1          1          -    Covered              
+            bin <max_pos,zero>                              3          1          -    Covered              
+            bin <min_neg,zero>                              3          1          -    Covered              
+            bin <negative,negative>                         4          1          -    Covered              
+            bin <positive,negative>                         5          1          -    Covered              
+            bin <zero,negative>                             1          1          -    Covered              
+            bin <negative,positive>                         6          1          -    Covered              
+            bin <positive,positive>                         5          1          -    Covered              
+            bin <zero,positive>                             1          1          -    Covered              
+            bin <negative,zero>                            20          1          -    Covered              
+            bin <positive,zero>                            21          1          -    Covered              
+            bin <zero,zero>                                49          1          -    Covered              
+        Illegal and Ignore Bins:
+            ignore_bin extreme_im_nonzero_re                0                     -    ZERO                 
+            ignore_bin extreme_re_nonzero_im                0                     -    ZERO                 
+
+TOTAL COVERGROUP COVERAGE: 100.00%  COVERGROUP TYPES: 1
+
+Total Coverage By Instance (filtered view): 100.00%
+

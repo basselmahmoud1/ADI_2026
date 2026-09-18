@@ -1,0 +1,123 @@
+Coverage Report by DU with details
+
+=================================================================================
+=== Design Unit: work.SDF_STAGE
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        32        32         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for Design Unit work.SDF_STAGE
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../src/SDF_STAGE.sv
+------------------------------------IF Branch------------------------------------
+    54                                       310     Count coming in to IF
+    54              1                        178     
+    54              2                        132     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    57                                       353     Count coming in to IF
+    57              1                        176     
+    57              2                        177     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    67                                       553     Count coming in to IF
+    67              1                        355     
+    67              2                        198     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    70                                       531     Count coming in to IF
+    70              1                        207     
+    70              2                        324     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    80                                       689     Count coming in to IF
+    80              1                        406     
+    80              2                        283     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    82                                       700     Count coming in to IF
+    82              1                        285     
+    82              2                        415     
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      92        92         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for Design Unit work.SDF_STAGE --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../src/SDF_STAGE.sv
+    49              1                        184     
+    50              1                        184     
+    51              1                        184     
+    52              1                        184     
+    54              1                        325     
+    57              1                        368     
+    62              1                        318     
+    63              1                        318     
+    64              1                        318     
+    65              1                        318     
+    67              1                        568     
+    70              1                        546     
+    75              1                        366     
+    76              1                        366     
+    77              1                        366     
+    78              1                        366     
+    80              1                        704     
+    82              1                        730     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                       1436      1262       174    87.88%
+
+================================Toggle Details================================
+
+Toggle Coverage for Design Unit work.SDF_STAGE
+
+                                              Node      1H->0L      0L->1H       0L->Z       Z->0L       1H->Z       Z->H1     ExtMode  "Coverage"
+                                              ---------------------------------------------------------------------------------------------------
+                           TWIDDLE_FACTOR1.im[0-1]           0           0           0           0           0           0           3        0.00 
+                             TWIDDLE_FACTOR1.im[4]           0           0           0           0           0           0           3        0.00 
+                           TWIDDLE_FACTOR1.im[6-7]           0           0           0           0           0           0           3        0.00 
+                             TWIDDLE_FACTOR1.im[9]           0           0           0           0           0           0           3        0.00 
+                           TWIDDLE_FACTOR1.re[0-1]           0           0           0           0           0           0           3        0.00 
+                           TWIDDLE_FACTOR2.im[0-9]           0           0           0           0           0           0           3        0.00 
+                           TWIDDLE_FACTOR2.re[0-9]           0           0           0           0           0           0           3        0.00 
+                            TWIDDLE_FACTOR2.re[11]           0           0           0           0           0           0           3        0.00 
+
+========
+(n*) - Number was not used in coverage calculations performed by extended toggle algorithms.
+
+Extended Toggle Coverage Calculation Criteria:
+-----------------------------------------------
+	ExtMode 1: 0L->1H & 1H->0L & any one 'Z' transition (to/from 'Z').
+	ExtMode 2: 0L->1H & 1H->0L & one transition to 'Z' & one transition from 'Z'.
+	ExtMode 3: 0L->1H & 1H->0L & all 'Z' transitions.
+========
+
+Total Node Count     =        660 
+Toggled Node Count   =        631 
+Untoggled Node Count =         29 
+
+Toggle Coverage      =      87.88% (1262 of 1436 bins)
+
+
+Total Coverage By Design Unit (filtered view): 95.96%
+

@@ -1,0 +1,603 @@
+m255
+K4
+z2
+!s99 nomlopt
+!s11f vlog 2021.1 2021.01, Jan 19 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/courses/Digital/ADI/FFT/UVM_TB/sim
+T_opt
+!s11d fft_agent_pkg D:/courses/Digital/ADI/FFT/UVM_TB/sim/work 1 fft_interface 1 D:/courses/Digital/ADI/FFT/UVM_TB/sim/work 
+!s110 1786825454
+VoonJd[UDA0Sl0`TW[hV>50
+04 3 4 work top fast 0
+=1-60189574db22-6a80caed-ce-4028
+!s124 OEM100
+o-quiet -auto_acc_if_foreign -work work -suppress 12110 +acc=npr+cover=bcesfx
+Z1 tCvgOpt 0
+n@_opt
+OL;O;2021.1;73
+vBUTTERFLY
+Z2 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z3 DXx4 work 12 Complex_pack 0 22 REn<R3oX=_I5=`A7U`OWO0
+Z4 DXx4 work 20 Complex_pack_sv_unit 0 22 FB[?[9GNET2>4GdgKfd`_0
+Z5 !s110 1786825445
+Z6 VDg1SIo80bB@j0V0VzS_@n1
+r1
+!s85 0
+!i10b 1
+!s100 mZ[zMIW]h<Be1BDWKCdzL3
+IKG`kAL]^NliYaFg`^gj2d1
+Z7 !s105 Complex_pack_sv_unit
+S1
+R0
+w1786631544
+Z8 8../src/BUTTERFLY.sv
+Z9 F../src/BUTTERFLY.sv
+!i122 0
+L0 3 24
+Z10 OL;L;2021.1;73
+31
+Z11 !s108 1786825445.000000
+Z12 !s107 ../src/Complex_MULT.sv|../src/BUTTERFLY.sv|../src/SDF_STAGE.sv|../src/ROM.sv|../src/FFT_WRAPPER.sv|../src/FFT_Top.sv|../src/DELAY.sv|../src/Counter.sv|../src/Control_unit.sv|../src/Complex_pack.sv|
+Z13 !s90 -work|work|-sv|-mfcu|-timescale|1ns/1ns|+cover=bcesfx|-f|filelist_rtl.f|-l|compile.log|
+!i113 0
+Z14 !s102 +cover=bcesfx
+Z15 o-work work -sv -mfcu -timescale 1ns/1ns +cover=bcesfx -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+n@b@u@t@t@e@r@f@l@y
+vComplex_MULT
+R2
+R3
+R4
+R5
+R6
+r1
+!s85 0
+!i10b 1
+!s100 NAXVXjM[Y5NI`UPjdJG0j3
+IDVG3l6>XBIT]?D15n53533
+R7
+S1
+R0
+w1786385456
+Z16 8../src/Complex_MULT.sv
+Z17 F../src/Complex_MULT.sv
+!i122 0
+L0 3 40
+R10
+31
+R11
+R12
+R13
+!i113 0
+R14
+R15
+R1
+n@complex_@m@u@l@t
+XComplex_pack
+R2
+R5
+!i10b 1
+!s100 M8YI6_<SBW?Zg4><a9g;61
+IREn<R3oX=_I5=`A7U`OWO0
+S1
+R0
+w1786380550
+Z18 8../src/Complex_pack.sv
+Z19 F../src/Complex_pack.sv
+!i122 0
+Z20 L0 1 0
+VREn<R3oX=_I5=`A7U`OWO0
+R10
+r1
+!s85 0
+31
+R11
+R12
+R13
+!i113 0
+R14
+R15
+R1
+n@complex_pack
+XComplex_pack_sv_unit
+R2
+R3
+R5
+VFB[?[9GNET2>4GdgKfd`_0
+r1
+!s85 0
+!i10b 1
+!s100 9ZX[6=N_UjLVfPi:FV[5n2
+IFB[?[9GNET2>4GdgKfd`_0
+!i103 1
+S1
+R0
+Z21 w1786634183
+R18
+R19
+Z22 8../src/Control_unit.sv
+Z23 F../src/Control_unit.sv
+Z24 8../src/Counter.sv
+Z25 F../src/Counter.sv
+Z26 8../src/DELAY.sv
+Z27 F../src/DELAY.sv
+Z28 8../src/FFT_Top.sv
+Z29 F../src/FFT_Top.sv
+Z30 8../src/FFT_WRAPPER.sv
+Z31 F../src/FFT_WRAPPER.sv
+Z32 8../src/ROM.sv
+Z33 F../src/ROM.sv
+Z34 8../src/SDF_STAGE.sv
+Z35 F../src/SDF_STAGE.sv
+R8
+R9
+R16
+R17
+!i122 0
+R20
+R10
+31
+R11
+R12
+R13
+!i113 0
+R14
+R15
+R1
+n@complex_pack_sv_unit
+vControl_unit
+R7
+R4
+R2
+R5
+!i10b 1
+!s100 i:C2G4XjhzX9WmioV1_R;2
+I;^VnWPXl0D14DDl=GV[lg2
+S1
+R0
+w1786625763
+R22
+R23
+!i122 0
+L0 1 52
+R6
+R10
+r1
+!s85 0
+31
+R11
+R12
+R13
+!i113 0
+R14
+R15
+R1
+n@control_unit
+vCounter
+R7
+R4
+R2
+R5
+!i10b 1
+!s100 05;`2<C_CVSzjIBF;9DlS0
+I9mSQ9o7TQkLIAD8EP:7Ch2
+S1
+R0
+w1786623858
+R24
+R25
+!i122 0
+L0 1 22
+R6
+R10
+r1
+!s85 0
+31
+R11
+R12
+R13
+!i113 0
+R14
+R15
+R1
+n@counter
+vDELAY
+R2
+R3
+R4
+R5
+R6
+r1
+!s85 0
+!i10b 1
+!s100 06@4;4YWNJe9d;NeO465e3
+Il:bUAkP9KFc]icK:lTZRJ0
+R7
+S1
+R0
+w1786378920
+R26
+R27
+!i122 0
+L0 3 29
+R10
+31
+R11
+R12
+R13
+!i113 0
+R14
+R15
+R1
+n@d@e@l@a@y
+Xfft_agent_pkg
+!s115 fft_interface
+R2
+Z36 DXx6 mtiUvm 7 uvm_pkg 0 22 8V[`8]Q0W57le7Z>zYaAj1
+R3
+Z37 !s110 1786825446
+!i10b 1
+!s100 jNMW5LOBgnD630n8c5?FM2
+If0c]4KTmM3f1JcTB;HTdT0
+S1
+R0
+w1786648632
+Z38 8../tb/agents/fft/fft_agent_pkg.sv
+Z39 F../tb/agents/fft/fft_agent_pkg.sv
+Z40 FC:/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/uvm_macros.svh
+FC:/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_version_defines.svh
+FC:/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_message_defines.svh
+FC:/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_phase_defines.svh
+FC:/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_object_defines.svh
+FC:/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_printer_defines.svh
+FC:/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_tlm_defines.svh
+FC:/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/tlm1/uvm_tlm_imps.svh
+FC:/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_sequence_defines.svh
+FC:/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_callback_defines.svh
+FC:/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_reg_defines.svh
+FC:/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_deprecated_defines.svh
+F../tb/agents/fft/fft_types.svh
+F../tb/agents/fft/fft_seq_item.svh
+F../tb/agents/fft/fft_sequencer.svh
+F../tb/agents/fft/fft_agent_config.svh
+F../tb/agents/fft/fft_driver.svh
+F../tb/agents/fft/fft_monitor.svh
+F../tb/agents/fft/fft_agent.svh
+F../tb/agents/fft/sequences/fft_sequence_matlab_ref.svh
+F../tb/agents/fft/sequences/fft_sequence_impulse.svh
+F../tb/agents/fft/sequences/fft_sequence_sin.svh
+F../tb/agents/fft/sequences/fft_sequence_vector_base.svh
+F../tb/agents/fft/sequences/fft_sequence_all_zeros.svh
+F../tb/agents/fft/sequences/fft_sequence_alternating.svh
+F../tb/agents/fft/sequences/fft_sequence_real_ramp.svh
+F../tb/agents/fft/sequences/fft_sequence_deterministic_complex.svh
+F../tb/agents/fft/sequences/fft_sequence_impulse_n0.svh
+F../tb/agents/fft/sequences/fft_sequence_impulse_n3.svh
+F../tb/agents/fft/sequences/fft_sequence_dc_pos.svh
+F../tb/agents/fft/sequences/fft_sequence_dc_neg.svh
+F../tb/agents/fft/sequences/fft_sequence_cos_bin1.svh
+F../tb/agents/fft/sequences/fft_sequence_complex_sinusoid_bin1.svh
+F../tb/agents/fft/sequences/fft_sequence_lsb_pattern.svh
+F../tb/agents/fft/sequences/fft_sequence_max_positive_impulse.svh
+F../tb/agents/fft/sequences/fft_sequence_min_negative_impulse.svh
+F../tb/agents/fft/sequences/fft_sequence_maxmin_pair.svh
+F../tb/agents/fft/sequences/fft_sequence_mixed_corners.svh
+!i122 1
+Z41 L0 4 0
+Vf0c]4KTmM3f1JcTB;HTdT0
+R10
+r1
+!s85 0
+31
+Z42 !s108 1786825446.000000
+Z43 !s107 ../test/specific_tests/fft_test_mixed_corners.svh|../test/specific_tests/fft_test_maxmin_pair.svh|../test/specific_tests/fft_test_min_negative_impulse.svh|../test/specific_tests/fft_test_max_positive_impulse.svh|../test/specific_tests/fft_test_lsb_pattern.svh|../test/specific_tests/fft_test_complex_sinusoid_bin1.svh|../test/specific_tests/fft_test_cos_bin1.svh|../test/specific_tests/fft_test_dc_neg.svh|../test/specific_tests/fft_test_dc_pos.svh|../test/specific_tests/fft_test_impulse_n3.svh|../test/specific_tests/fft_test_impulse_n0.svh|../test/specific_tests/fft_test_deterministic_complex.svh|../test/specific_tests/fft_test_real_ramp.svh|../test/specific_tests/fft_test_alternating.svh|../test/specific_tests/fft_test_all_zeros.svh|../test/specific_tests/fft_test_sin.svh|../test/specific_tests/fft_test_sanity.svh|../test/specific_tests/fft_test_matlab.svh|../test/fft_test_base.svh|../tb/env/fft_env.svh|../tb/env/fft_subscriber.svh|../tb/env/fft_scoreboard.svh|../tb/agents/fft/sequences/fft_sequence_mixed_corners.svh|../tb/agents/fft/sequences/fft_sequence_maxmin_pair.svh|../tb/agents/fft/sequences/fft_sequence_min_negative_impulse.svh|../tb/agents/fft/sequences/fft_sequence_max_positive_impulse.svh|../tb/agents/fft/sequences/fft_sequence_lsb_pattern.svh|../tb/agents/fft/sequences/fft_sequence_complex_sinusoid_bin1.svh|../tb/agents/fft/sequences/fft_sequence_cos_bin1.svh|../tb/agents/fft/sequences/fft_sequence_dc_neg.svh|../tb/agents/fft/sequences/fft_sequence_dc_pos.svh|../tb/agents/fft/sequences/fft_sequence_impulse_n3.svh|../tb/agents/fft/sequences/fft_sequence_impulse_n0.svh|../tb/agents/fft/sequences/fft_sequence_deterministic_complex.svh|../tb/agents/fft/sequences/fft_sequence_real_ramp.svh|../tb/agents/fft/sequences/fft_sequence_alternating.svh|../tb/agents/fft/sequences/fft_sequence_all_zeros.svh|../tb/agents/fft/sequences/fft_sequence_vector_base.svh|../tb/agents/fft/sequences/fft_sequence_sin.svh|../tb/agents/fft/sequences/fft_sequence_impulse.svh|../tb/agents/fft/sequences/fft_sequence_matlab_ref.svh|../tb/agents/fft/fft_agent.svh|../tb/agents/fft/fft_monitor.svh|../tb/agents/fft/fft_driver.svh|../tb/agents/fft/fft_agent_config.svh|../tb/agents/fft/fft_sequencer.svh|../tb/agents/fft/fft_seq_item.svh|../tb/agents/fft/fft_types.svh|C:/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_deprecated_defines.svh|C:/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_reg_defines.svh|C:/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_callback_defines.svh|C:/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_sequence_defines.svh|C:/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/tlm1/uvm_tlm_imps.svh|C:/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_tlm_defines.svh|C:/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_printer_defines.svh|C:/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_object_defines.svh|C:/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_phase_defines.svh|C:/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_message_defines.svh|C:/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_version_defines.svh|C:/questasim64_2021.1/uvm-1.1d/../verilog_src/uvm-1.1d/src/uvm_macros.svh|../tb/top/top.sv|../test/fft_test_pkg.sv|../tb/env/fft_env_pkg.sv|../tb/interfaces/fft_interface.sv|../tb/agents/fft/fft_agent_pkg.sv|
+Z44 !s90 -work|work|-sv|-mfcu|-timescale|1ns/1ns|+define+UVM_NO_DEPRECATED|+define+UVM_VERSION=1200|+cover=bcesfx|-L|/verilog_src/uvm-1.2|-f|filelist_tb.f|-l|compile.log|
+!i113 0
+R14
+Z45 o-work work -sv -mfcu -timescale 1ns/1ns +cover=bcesfx -L /verilog_src/uvm-1.2 -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z46 !s92 -work work -sv -mfcu -timescale 1ns/1ns +define+UVM_NO_DEPRECATED +define+UVM_VERSION=1200 +cover=bcesfx -L /verilog_src/uvm-1.2 -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+Xfft_agent_pkg_sv_unit
+R2
+R3
+R37
+VbY46Cm@dI[a><Q4W?lPH<2
+r1
+!s85 0
+!i10b 1
+!s100 `EhUWZAE=e83P>BiSa:6Y1
+IbY46Cm@dI[a><Q4W?lPH<2
+!i103 1
+S1
+R0
+Z47 w1786648541
+R38
+R39
+Z48 8../tb/interfaces/fft_interface.sv
+Z49 F../tb/interfaces/fft_interface.sv
+Z50 8../tb/env/fft_env_pkg.sv
+Z51 F../tb/env/fft_env_pkg.sv
+Z52 8../test/fft_test_pkg.sv
+Z53 F../test/fft_test_pkg.sv
+Z54 8../tb/top/top.sv
+Z55 F../tb/top/top.sv
+!i122 1
+L0 2 0
+R10
+31
+R42
+R43
+R44
+!i113 0
+R14
+R45
+R46
+R1
+Xfft_env_pkg
+R2
+R36
+R3
+Z56 DXx4 work 13 fft_agent_pkg 0 22 f0c]4KTmM3f1JcTB;HTdT0
+R37
+VBdJVTOI<P1zgambGW_HC61
+r1
+!s85 0
+!i10b 1
+!s100 5Vz5SzSm8gNnmQXP;e1Mf2
+IBdJVTOI<P1zgambGW_HC61
+S1
+R0
+w1786650771
+R50
+R51
+R40
+F../tb/env/fft_scoreboard.svh
+F../tb/env/fft_subscriber.svh
+F../tb/env/fft_env.svh
+!i122 1
+R41
+R10
+31
+R42
+R43
+R44
+!i113 0
+R14
+R45
+R46
+R1
+Yfft_interface
+R2
+R3
+Z57 DXx4 work 21 fft_agent_pkg_sv_unit 0 22 bY46Cm@dI[a><Q4W?lPH<2
+R37
+R6
+r1
+!s85 0
+!i10b 1
+!s100 mO]R:F9JYNUbo4h=^mmm`2
+If;<fHk4K15ilJK0QOTzo00
+Z58 !s105 fft_agent_pkg_sv_unit
+S1
+R0
+w1786615040
+R48
+R49
+!i122 1
+R41
+R10
+31
+R42
+R43
+R44
+!i113 0
+R14
+R45
+R46
+R1
+Xfft_test_pkg
+R2
+R36
+R3
+R56
+Z59 DXx4 work 11 fft_env_pkg 0 22 BdJVTOI<P1zgambGW_HC61
+R37
+V:`H1WO_F[mf:PeB2a@n9I3
+r1
+!s85 0
+!i10b 1
+!s100 g]9jXW;@eE8XOn_AlN`3@0
+I:`H1WO_F[mf:PeB2a@n9I3
+S1
+R0
+R47
+R52
+R53
+R40
+F../test/fft_test_base.svh
+F../test/specific_tests/fft_test_matlab.svh
+F../test/specific_tests/fft_test_sanity.svh
+F../test/specific_tests/fft_test_sin.svh
+F../test/specific_tests/fft_test_all_zeros.svh
+F../test/specific_tests/fft_test_alternating.svh
+F../test/specific_tests/fft_test_real_ramp.svh
+F../test/specific_tests/fft_test_deterministic_complex.svh
+F../test/specific_tests/fft_test_impulse_n0.svh
+F../test/specific_tests/fft_test_impulse_n3.svh
+F../test/specific_tests/fft_test_dc_pos.svh
+F../test/specific_tests/fft_test_dc_neg.svh
+F../test/specific_tests/fft_test_cos_bin1.svh
+F../test/specific_tests/fft_test_complex_sinusoid_bin1.svh
+F../test/specific_tests/fft_test_lsb_pattern.svh
+F../test/specific_tests/fft_test_max_positive_impulse.svh
+F../test/specific_tests/fft_test_min_negative_impulse.svh
+F../test/specific_tests/fft_test_maxmin_pair.svh
+F../test/specific_tests/fft_test_mixed_corners.svh
+!i122 1
+R41
+R10
+31
+R42
+R43
+R44
+!i113 0
+R14
+R45
+R46
+R1
+vFFT_Top
+R2
+R3
+R4
+R5
+R6
+r1
+!s85 0
+!i10b 1
+!s100 1bKK=O8QTcTeQ?D:h=8Yi1
+I6T]jk`:H5U39M?8cZZ<G_1
+R7
+S1
+R0
+w1786632471
+R28
+R29
+!i122 0
+L0 3 70
+R10
+31
+R11
+R12
+R13
+!i113 0
+R14
+R15
+R1
+n@f@f@t_@top
+vFFT_WRAPPER
+R2
+R3
+R4
+R5
+R6
+r1
+!s85 0
+!i10b 1
+!s100 4ERI7bizP[h1EHcKY_1N43
+I70TRK>MM^iB9Hd=n92d2:1
+R7
+S1
+R0
+R21
+R30
+R31
+!i122 0
+L0 1 13
+R10
+31
+R11
+R12
+R13
+!i113 0
+R14
+R15
+R1
+n@f@f@t_@w@r@a@p@p@e@r
+vSDF_STAGE
+R2
+R3
+R4
+R5
+R6
+r1
+!s85 0
+!i10b 1
+!s100 2FM]02mUD0C@HT=1QTfV01
+I7NK28UXmkkWA:i5mo8?8h1
+R7
+S1
+R0
+w1786630219
+R34
+R35
+!i122 0
+L0 3 84
+R10
+31
+R11
+R12
+R13
+!i113 0
+R14
+R15
+R1
+n@s@d@f_@s@t@a@g@e
+vtop
+R2
+R3
+R57
+R36
+R56
+R59
+DXx4 work 12 fft_test_pkg 0 22 :`H1WO_F[mf:PeB2a@n9I3
+R37
+R6
+r1
+!s85 0
+!i10b 1
+!s100 KLWLdl33Y`zS_;b22kBD]0
+Il6BSi0W?V`9^8bo16`=5l0
+R58
+S1
+R0
+w1786632708
+R54
+R55
+R40
+!i122 1
+L0 2 107
+R10
+31
+R42
+R43
+R44
+!i113 0
+R14
+R45
+R46
+R1
+vTwiddle_ROM
+R2
+R3
+R4
+R5
+R6
+r1
+!s85 0
+!i10b 1
+!s100 1o[_MQXInKLZAzECRY@]V2
+I:nCl_zg7jllch8HPEXm>S1
+R7
+S1
+R0
+w1786477867
+R32
+R33
+!i122 0
+L0 3 35
+R10
+31
+R11
+R12
+R13
+!i113 0
+R14
+R15
+R1
+n@twiddle_@r@o@m

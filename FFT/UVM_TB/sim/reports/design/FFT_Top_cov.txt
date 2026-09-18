@@ -1,0 +1,45 @@
+Coverage Report by DU with details
+
+=================================================================================
+=== Design Unit: work.FFT_Top
+=================================================================================
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                        334       271       63    80.14%
+
+================================Toggle Details================================
+
+Toggle Coverage for Design Unit work.FFT_Top
+
+                                              Node      1H->0L      0L->1H       0L->Z       Z->0L       1H->Z       Z->H1     ExtMode  "Coverage"
+                                              ---------------------------------------------------------------------------------------------------
+                                      rom_addr2[0]           0           0           0           0           0           0           3        0.00 
+                                  twiddle1.im[0-1]           0           0           0           0           0           0           3        0.00 
+                                    twiddle1.im[4]           0           0           0           0           0           0           3        0.00 
+                                  twiddle1.im[6-7]           0           0           0           0           0           0           3        0.00 
+                                    twiddle1.im[9]           0           0           0           0           0           0           3        0.00 
+                                  twiddle1.re[0-1]           0           0           0           0           0           0           3        0.00 
+                                  twiddle2.im[0-9]           0           0           0           0           0           0           3        0.00 
+                                  twiddle2.re[0-9]           0           0           0           0           0           0           3        0.00 
+                                   twiddle2.re[11]           0           0           0           0           0           0           3        0.00 
+
+========
+(n*) - Number was not used in coverage calculations performed by extended toggle algorithms.
+
+Extended Toggle Coverage Calculation Criteria:
+-----------------------------------------------
+	ExtMode 1: 0L->1H & 1H->0L & any one 'Z' transition (to/from 'Z').
+	ExtMode 2: 0L->1H & 1H->0L & one transition to 'Z' & one transition from 'Z'.
+	ExtMode 3: 0L->1H & 1H->0L & all 'Z' transitions.
+========
+
+Total Node Count     =        107 
+Toggled Node Count   =         77 
+Untoggled Node Count =         30 
+
+Toggle Coverage      =      46.10% (154 of 334 bins)
+
+
+Total Coverage By Design Unit (filtered view): 46.10%
+

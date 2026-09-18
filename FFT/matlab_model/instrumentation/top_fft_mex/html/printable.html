@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+<h1>Instrumentation Results for top_fft_mex</h1>
+<h2>Summary</h2>
+<p>To re-create this report:</p>
+<pre>  showInstrumentationResults top_fft_mex -proposeFL -defaultDT numerictype(1,32)</pre>
+
+<p>MEX-function name:</p>
+<pre>top_fft_mex</pre>
+<p>Timestamp:</p>
+<pre>Tue Aug 11 20:13:02 2026</pre>
+<p>To open this report from the MATLAB command line:</p>
+<pre> web('-browser','D:\courses\Digital\ADI\FFT\matlab_model\instrumentation\top_fft_mex\html\printable.html')</pre>
+
+
+<h2>Function top_fft </h2>
+
+<pre>
+function data_out = top_fft(data_in, clk)%#codegen
+    % TOP_FFT Top-level module connecting the 3 stages of an 8-point Radix-2 DIF SDF FFT
+    
+    % Stage 1 (Delay = 4)
+    out_1 = sdf_stage_1(data_in, clk);
+    
+    % Stage 2 (Delay = 2)
+    out_2 = sdf_stage_2(out_1, clk);
+    
+    % Stage 3 (Delay = 1)
+    data_out = sdf_stage_3(out_2, clk);
+end
+</pre>
+<table style="border-collapse: collapse; border: solid;" border="1">
+<caption><b>Logged Variables for top_fft</b></caption>
+<tr><th>Variable</th><th>Type</th><th>Size</th><th>Class</th><th>Complex</th><th>Proposed<br>Signedness</th><th>Proposed<br>WL</th><th>Proposed<br>FL</th><th>Always<br>Whole Number</th><th>SimMin</th><th>SimMax</th></tr>
+<tr><td><code>clk</code></td><td><code>Input</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>double</code></td><td><code>No</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>0</code></td><td><code><b>Yes</b></code></td><td><code>0</code></td><td><code>14</code></td></tr>
+<tr><td><code>data_in</code></td><td><code>Input</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>double</code></td><td><code>No</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>0</code></td><td><code><b>Yes</b></code></td><td><code>-32381</code></td><td><code>32080</code></td></tr>
+<tr><td><code>data_out</code></td><td><code>Output</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>double</code></td><td><code>Yes</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>13</code></td><td><code>No</code></td><td><code>-214962</code></td><td><code>196427</code></td></tr>
+<tr><td><code>out_1</code></td><td><code>Local</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>double</code></td><td><code>Yes</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>15</code></td><td><code>No</code></td><td><code>-61145</code></td><td><code>58891</code></td></tr>
+<tr><td><code>out_2</code></td><td><code>Local</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>double</code></td><td><code>Yes</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>14</code></td><td><code>No</code></td><td><code>-110690</code></td><td><code>102241</code></td></tr>
+</table>
+
+<h2>Function twiddle_Wx </h2>
+
+<pre>
+function Wx_ROM = twiddle_Wx(N) %#codegen 
+
+Wx_ROM = complex(zeros(1, N/2));
+for indx = 1:N/2
+    k = indx - 1;
+    Wx_ROM(indx) = exp(-1i * 2 * pi * k / N);
+end
+
+end
+</pre>
+<table style="border-collapse: collapse; border: solid;" border="1">
+<caption><b>Logged Variables for twiddle_Wx</b></caption>
+<tr><th>Variable</th><th>Type</th><th>Size</th><th>Class</th><th>Complex</th><th>Proposed<br>Signedness</th><th>Proposed<br>WL</th><th>Proposed<br>FL</th><th>Always<br>Whole Number</th><th>SimMin</th><th>SimMax</th></tr>
+<tr><td><code>N</code></td><td><code>Input</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>double</code></td><td><code>No</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>0</code></td><td><code><b>Yes</b></code></td><td><code>8</code></td><td><code>8</code></td></tr>
+<tr><td><code>Wx_ROM</code></td><td><code>Output</code></td><td><code>1&nbsp;x&nbsp;4</code></td><td><code>double</code></td><td><code>Yes</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>30</code></td><td><code>No</code></td><td><code>-1</code></td><td><code>1</code></td></tr>
+<tr><td><code>indx</code></td><td><code>Local</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>double</code></td><td><code>No</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>0</code></td><td><code><b>Yes</b></code></td><td><code>1</code></td><td><code>4</code></td></tr>
+<tr><td><code>k</code></td><td><code>Local</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>double</code></td><td><code>No</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>0</code></td><td><code><b>Yes</b></code></td><td><code>0</code></td><td><code>3</code></td></tr>
+</table>
+
+<h2>Function delay_x&gt;1 </h2>
+
+<pre>
+function output = delay_x(input, delay_select, write_enable) %#codegen
+
+persistent reg_4;
+persistent reg_2;
+persistent reg_1;
+
+% Output must be able to carry complex data
+output = complex(0);
+
+if delay_select == 4
+
+    if isempty(reg_4)
+        reg_4 = complex(zeros(1, 4));
+    end
+    
+    % Always read the oldest data
+    output = reg_4(1);
+    
+    % Update memory only when enabled
+    if write_enable
+        reg_4(1:end-1) = reg_4(2:end);
+        reg_4(end) = input;
+    end
+end
+
+if delay_select == 2
+
+    if isempty(reg_2)
+        reg_2 = complex(zeros(1, 2));
+    end
+    
+    % Always read the oldest data
+    output = reg_2(1);
+    
+    % Update memory only when enabled
+    if write_enable
+        reg_2(1:end-1) = reg_2(2:end);
+        reg_2(end) = input;
+    end
+end
+
+if delay_select == 1
+
+    if isempty(reg_1)
+        reg_1 = complex(zeros(1, 1));
+    end
+    
+    % Always read the oldest data
+    output = reg_1(1);
+    
+    % Update memory only when enabled
+    if write_enable
+        reg_1(1:end-1) = reg_1(2:end);
+        reg_1(end) = input;
+    end
+end
+
+end
+</pre>
+<table style="border-collapse: collapse; border: solid;" border="1">
+<caption><b>Logged Variables for delay_x&gt;1</b></caption>
+<tr><th>Variable</th><th>Type</th><th>Size</th><th>Class</th><th>Complex</th><th>Proposed<br>Signedness</th><th>Proposed<br>WL</th><th>Proposed<br>FL</th><th>Always<br>Whole Number</th><th>SimMin</th><th>SimMax</th></tr>
+<tr><td><code>delay_select</code></td><td><code>Input</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>double</code></td><td><code>No</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>0</code></td><td><code><b>Yes</b></code></td><td><code>1</code></td><td><code>4</code></td></tr>
+<tr><td><code>input</code></td><td><code>Input</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>double</code></td><td><code>No</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>0</code></td><td><code><b>Yes</b></code></td><td><code>0</code></td><td><code>0</code></td></tr>
+<tr><td><code>output</code></td><td><code>Output</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>double</code></td><td><code>Yes</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>14</code></td><td><code>No</code></td><td><code>-123455.50597658128</code></td><td><code>120866.53163223462</code></td></tr>
+<tr><td><code>reg_1</code></td><td><code>Persistent</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>double</code></td><td><code>Yes</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>0</code></td><td><code><b>Yes</b></code></td><td><code>0</code></td><td><code>0</code></td></tr>
+<tr><td><code>reg_2</code></td><td><code>Persistent</code></td><td><code>1&nbsp;x&nbsp;2</code></td><td><code>double</code></td><td><code>Yes</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>0</code></td><td><code><b>Yes</b></code></td><td><code>0</code></td><td><code>0</code></td></tr>
+<tr><td><code>reg_4</code></td><td><code>Persistent</code></td><td><code>1&nbsp;x&nbsp;4</code></td><td><code>double</code></td><td><code>Yes</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>0</code></td><td><code><b>Yes</b></code></td><td><code>0</code></td><td><code>0</code></td></tr>
+<tr><td><code>write_enable</code></td><td><code>Input</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>logical</code></td><td><code></code></td><td><code></code></td><td><code></code></td><td><code></code></td><td><code><b>Yes</b></code></td><td><code>0</code></td><td><code>0</code></td></tr>
+</table>
+
+<h2>Function delay_x&gt;2 </h2>
+
+<pre>
+function output = delay_x(input, delay_select, write_enable) %#codegen
+
+persistent reg_4;
+persistent reg_2;
+persistent reg_1;
+
+% Output must be able to carry complex data
+output = complex(0);
+
+if delay_select == 4
+
+    if isempty(reg_4)
+        reg_4 = complex(zeros(1, 4));
+    end
+    
+    % Always read the oldest data
+    output = reg_4(1);
+    
+    % Update memory only when enabled
+    if write_enable
+        reg_4(1:end-1) = reg_4(2:end);
+        reg_4(end) = input;
+    end
+end
+
+if delay_select == 2
+
+    if isempty(reg_2)
+        reg_2 = complex(zeros(1, 2));
+    end
+    
+    % Always read the oldest data
+    output = reg_2(1);
+    
+    % Update memory only when enabled
+    if write_enable
+        reg_2(1:end-1) = reg_2(2:end);
+        reg_2(end) = input;
+    end
+end
+
+if delay_select == 1
+
+    if isempty(reg_1)
+        reg_1 = complex(zeros(1, 1));
+    end
+    
+    % Always read the oldest data
+    output = reg_1(1);
+    
+    % Update memory only when enabled
+    if write_enable
+        reg_1(1:end-1) = reg_1(2:end);
+        reg_1(end) = input;
+    end
+end
+
+end
+</pre>
+<table style="border-collapse: collapse; border: solid;" border="1">
+<caption><b>Logged Variables for delay_x&gt;2</b></caption>
+<tr><th>Variable</th><th>Type</th><th>Size</th><th>Class</th><th>Complex</th><th>Proposed<br>Signedness</th><th>Proposed<br>WL</th><th>Proposed<br>FL</th><th>Always<br>Whole Number</th><th>SimMin</th><th>SimMax</th></tr>
+<tr><td><code>delay_select</code></td><td><code>Input</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>double</code></td><td><code>No</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>0</code></td><td><code><b>Yes</b></code></td><td><code>4</code></td><td><code>4</code></td></tr>
+<tr><td><code>input</code></td><td><code>Input</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>double</code></td><td><code>No</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>0</code></td><td><code><b>Yes</b></code></td><td><code>-32381</code></td><td><code>31985</code></td></tr>
+<tr><td><code>output</code></td><td><code>Local</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>double</code></td><td><code>Yes</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>0</code></td><td><code><b>Yes</b></code></td><td><code>-60095</code></td><td><code>61145</code></td></tr>
+<tr><td><code>reg_4</code></td><td><code>Persistent</code></td><td><code>1&nbsp;x&nbsp;4</code></td><td><code>double</code></td><td><code>Yes</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>0</code></td><td><code><b>Yes</b></code></td><td><code>-59558</code></td><td><code>61145</code></td></tr>
+<tr><td><code>write_enable</code></td><td><code>Input</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>logical</code></td><td><code></code></td><td><code></code></td><td><code></code></td><td><code></code></td><td><code><b>Yes</b></code></td><td><code>1</code></td><td><code>1</code></td></tr>
+</table>
+
+<h2>Function butterfly_R2&gt;1 </h2>
+
+<pre>
+function [ADD,SUB] = butterfly_R2(in1,in2)%#codegen
+
+ADD = in1+in2;
+
+SUB = in1-in2;
+end
+</pre>
+<table style="border-collapse: collapse; border: solid;" border="1">
+<caption><b>Logged Variables for butterfly_R2&gt;1</b></caption>
+<tr><th>Variable</th><th>Type</th><th>Size</th><th>Class</th><th>Complex</th><th>Proposed<br>Signedness</th><th>Proposed<br>WL</th><th>Proposed<br>FL</th><th>Always<br>Whole Number</th><th>SimMin</th><th>SimMax</th></tr>
+<tr><td><code>ADD</code></td><td><code>Output</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>double</code></td><td><code>Yes</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>0</code></td><td><code><b>Yes</b></code></td><td><code>-58153</code></td><td><code>54155</code></td></tr>
+<tr><td><code>SUB</code></td><td><code>Output</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>double</code></td><td><code>Yes</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>0</code></td><td><code><b>Yes</b></code></td><td><code>-60095</code></td><td><code>61145</code></td></tr>
+<tr><td><code>in1</code></td><td><code>Input</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>double</code></td><td><code>Yes</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>0</code></td><td><code><b>Yes</b></code></td><td><code>-32381</code></td><td><code>31985</code></td></tr>
+<tr><td><code>in2</code></td><td><code>Input</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>double</code></td><td><code>No</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>0</code></td><td><code><b>Yes</b></code></td><td><code>-31229</code></td><td><code>32080</code></td></tr>
+</table>
+
+<h2>Function delay_x&gt;3 </h2>
+
+<pre>
+function output = delay_x(input, delay_select, write_enable) %#codegen
+
+persistent reg_4;
+persistent reg_2;
+persistent reg_1;
+
+% Output must be able to carry complex data
+output = complex(0);
+
+if delay_select == 4
+
+    if isempty(reg_4)
+        reg_4 = complex(zeros(1, 4));
+    end
+    
+    % Always read the oldest data
+    output = reg_4(1);
+    
+    % Update memory only when enabled
+    if write_enable
+        reg_4(1:end-1) = reg_4(2:end);
+        reg_4(end) = input;
+    end
+end
+
+if delay_select == 2
+
+    if isempty(reg_2)
+        reg_2 = complex(zeros(1, 2));
+    end
+    
+    % Always read the oldest data
+    output = reg_2(1);
+    
+    % Update memory only when enabled
+    if write_enable
+        reg_2(1:end-1) = reg_2(2:end);
+        reg_2(end) = input;
+    end
+end
+
+if delay_select == 1
+
+    if isempty(reg_1)
+        reg_1 = complex(zeros(1, 1));
+    end
+    
+    % Always read the oldest data
+    output = reg_1(1);
+    
+    % Update memory only when enabled
+    if write_enable
+        reg_1(1:end-1) = reg_1(2:end);
+        reg_1(end) = input;
+    end
+end
+
+end
+</pre>
+<table style="border-collapse: collapse; border: solid;" border="1">
+<caption><b>Logged Variables for delay_x&gt;3</b></caption>
+<tr><th>Variable</th><th>Type</th><th>Size</th><th>Class</th><th>Complex</th><th>Proposed<br>Signedness</th><th>Proposed<br>WL</th><th>Proposed<br>FL</th><th>Always<br>Whole Number</th><th>SimMin</th><th>SimMax</th></tr>
+<tr><td><code>delay_select</code></td><td><code>Input</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>double</code></td><td><code>No</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>0</code></td><td><code><b>Yes</b></code></td><td><code>1</code></td><td><code>4</code></td></tr>
+<tr><td><code>input</code></td><td><code>Input</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>double</code></td><td><code>Yes</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>14</code></td><td><code>No</code></td><td><code>-123455.50597658128</code></td><td><code>120866.53163223462</code></td></tr>
+<tr><td><code>output</code></td><td><code>Local</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>double</code></td><td><code>Yes</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>14</code></td><td><code>No</code></td><td><code>-123455.50597658128</code></td><td><code>120866.53163223462</code></td></tr>
+<tr><td><code>reg_1</code></td><td><code>Persistent</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>double</code></td><td><code>Yes</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>14</code></td><td><code>No</code></td><td><code>-123455.50597658128</code></td><td><code>120866.53163223462</code></td></tr>
+<tr><td><code>reg_2</code></td><td><code>Persistent</code></td><td><code>1&nbsp;x&nbsp;2</code></td><td><code>double</code></td><td><code>Yes</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>14</code></td><td><code>No</code></td><td><code>-78465</code></td><td><code>105112</code></td></tr>
+<tr><td><code>reg_4</code></td><td><code>Persistent</code></td><td><code>1&nbsp;x&nbsp;4</code></td><td><code>double</code></td><td><code>Yes</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>0</code></td><td><code><b>Yes</b></code></td><td><code>-60095</code></td><td><code>61145</code></td></tr>
+<tr><td><code>write_enable</code></td><td><code>Input</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>logical</code></td><td><code></code></td><td><code></code></td><td><code></code></td><td><code></code></td><td><code><b>Yes</b></code></td><td><code>1</code></td><td><code>1</code></td></tr>
+</table>
+
+<h2>Function sdf_stage_1 </h2>
+
+<pre>
+function data_out = sdf_stage_1(in_elem, clk)%#codegen
+    DELAY_SIZE = 4;
+    READ = false;
+    WRITE = true;
+    
+    persistent W8_ROM;
+    if isempty(W8_ROM)
+        W8_ROM = twiddle_Wx(8);
+    end
+
+    % Use 0-indexed counter for easier logic (0 to 7)
+    counter = mod(clk, 8); 
+
+    % Always read from the delay line first
+    delay_out = delay_x(0, DELAY_SIZE, READ);
+
+    if counter < 4 
+        % Cycles 0, 1, 2, 3: Orange Path "first data (out is garbage)"
+        % 1. Multiply the delayed SUB by twiddle factor and output it
+        % 2. Store the incoming data into the delay line
+        twiddle_idx = counter + 1;
+        W = W8_ROM(twiddle_idx);
+        
+        data_out = delay_out * W;
+        delay_x(in_elem, DELAY_SIZE, WRITE);
+    else 
+        % Cycles 4, 5, 6, 7: Blue Path "now the delay stores the " 
+        % 1. Compute butterfly with delayed data (A) and incoming data (B)
+        % 2. Output the SUM
+        % 3. Store the SUB into the delay line
+        [SUM, SUB] = butterfly_R2(delay_out, in_elem);
+        
+        data_out = SUM;
+        delay_x(SUB, DELAY_SIZE, WRITE);
+    end 
+end
+</pre>
+<table style="border-collapse: collapse; border: solid;" border="1">
+<caption><b>Logged Variables for sdf_stage_1</b></caption>
+<tr><th>Variable</th><th>Type</th><th>Size</th><th>Class</th><th>Complex</th><th>Proposed<br>Signedness</th><th>Proposed<br>WL</th><th>Proposed<br>FL</th><th>Always<br>Whole Number</th><th>SimMin</th><th>SimMax</th></tr>
+<tr><td><code>DELAY_SIZE</code></td><td><code>Local</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>double</code></td><td><code>No</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>0</code></td><td><code><b>Yes</b></code></td><td><code>4</code></td><td><code>4</code></td></tr>
+<tr><td><code>READ</code></td><td><code>Local</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>logical</code></td><td><code></code></td><td><code></code></td><td><code></code></td><td><code></code></td><td><code><b>Yes</b></code></td><td><code>0</code></td><td><code>0</code></td></tr>
+<tr><td><code>SUB</code></td><td><code>Local</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>double</code></td><td><code>Yes</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>0</code></td><td><code><b>Yes</b></code></td><td><code>-60095</code></td><td><code>61145</code></td></tr>
+<tr><td><code>SUM</code></td><td><code>Local</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>double</code></td><td><code>Yes</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>0</code></td><td><code><b>Yes</b></code></td><td><code>-58153</code></td><td><code>54155</code></td></tr>
+<tr><td><code>W</code></td><td><code>Local</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>double</code></td><td><code>Yes</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>30</code></td><td><code>No</code></td><td><code>-1</code></td><td><code>1</code></td></tr>
+<tr><td><code>W8_ROM</code></td><td><code>Persistent</code></td><td><code>1&nbsp;x&nbsp;4</code></td><td><code>double</code></td><td><code>Yes</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>30</code></td><td><code>No</code></td><td><code>-1</code></td><td><code>1</code></td></tr>
+<tr><td><code>WRITE</code></td><td><code>Local</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>logical</code></td><td><code></code></td><td><code></code></td><td><code></code></td><td><code></code></td><td><code><b>Yes</b></code></td><td><code>1</code></td><td><code>1</code></td></tr>
+<tr><td><code>clk</code></td><td><code>Input</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>double</code></td><td><code>No</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>0</code></td><td><code><b>Yes</b></code></td><td><code>0</code></td><td><code>14</code></td></tr>
+<tr><td><code>counter</code></td><td><code>Local</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>double</code></td><td><code>No</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>0</code></td><td><code><b>Yes</b></code></td><td><code>0</code></td><td><code>7</code></td></tr>
+<tr><td><code>data_out</code></td><td><code>Output</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>double</code></td><td><code>Yes</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>15</code></td><td><code>No</code></td><td><code>-61145</code></td><td><code>58891</code></td></tr>
+<tr><td><code>delay_out</code></td><td><code>Local</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>double</code></td><td><code>Yes</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>0</code></td><td><code><b>Yes</b></code></td><td><code>-60095</code></td><td><code>61145</code></td></tr>
+<tr><td><code>in_elem</code></td><td><code>Input</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>double</code></td><td><code>No</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>0</code></td><td><code><b>Yes</b></code></td><td><code>-32381</code></td><td><code>32080</code></td></tr>
+<tr><td><code>twiddle_idx</code></td><td><code>Local</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>double</code></td><td><code>No</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>0</code></td><td><code><b>Yes</b></code></td><td><code>1</code></td><td><code>4</code></td></tr>
+</table>
+
+<h2>Function butterfly_R2&gt;2 </h2>
+
+<pre>
+function [ADD,SUB] = butterfly_R2(in1,in2)%#codegen
+
+ADD = in1+in2;
+
+SUB = in1-in2;
+end
+</pre>
+<table style="border-collapse: collapse; border: solid;" border="1">
+<caption><b>Logged Variables for butterfly_R2&gt;2</b></caption>
+<tr><th>Variable</th><th>Type</th><th>Size</th><th>Class</th><th>Complex</th><th>Proposed<br>Signedness</th><th>Proposed<br>WL</th><th>Proposed<br>FL</th><th>Always<br>Whole Number</th><th>SimMin</th><th>SimMax</th></tr>
+<tr><td><code>ADD</code></td><td><code>Output</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>double</code></td><td><code>Yes</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>13</code></td><td><code>No</code></td><td><code>-214962</code></td><td><code>196427</code></td></tr>
+<tr><td><code>SUB</code></td><td><code>Output</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>double</code></td><td><code>Yes</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>14</code></td><td><code>No</code></td><td><code>-123455.50597658128</code></td><td><code>120866.53163223462</code></td></tr>
+<tr><td><code>in1</code></td><td><code>Input</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>double</code></td><td><code>Yes</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>14</code></td><td><code>No</code></td><td><code>-110690</code></td><td><code>102241</code></td></tr>
+<tr><td><code>in2</code></td><td><code>Input</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>double</code></td><td><code>Yes</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>14</code></td><td><code>No</code></td><td><code>-105112</code></td><td><code>94186</code></td></tr>
+</table>
+
+<h2>Function sdf_stage_2 </h2>
+
+<pre>
+function data_out = sdf_stage_2(in_elem, clk)%#codegen
+    DELAY_SIZE = 2;
+    READ = false;
+    WRITE = true;
+    
+    persistent W8_ROM;
+    if isempty(W8_ROM)
+        W8_ROM = twiddle_Wx(8);
+    end
+
+    % Use 0-indexed counter for easier logic (0 to 7)
+    counter = mod(clk, 4); 
+
+    % Always read from the delay line first
+    delay_out = delay_x(0, DELAY_SIZE, READ);
+
+    if counter < 2 
+        % Cycles 0, 1: Orange Path 
+        % 1. Multiply the delayed SUB by twiddle factor and output it
+        % 2. Store the incoming data into the delay line
+        twiddle_idx = (counter * 2) + 1;
+        W = W8_ROM(twiddle_idx);
+        
+        data_out = delay_out * W;
+        delay_x(in_elem, DELAY_SIZE, WRITE);
+    else 
+        % Cycles 2, 3: Blue Path
+        % 1. Compute butterfly with delayed data (A) and incoming data (B)
+        % 2. Output the SUM
+        % 3. Store the SUB into the delay line
+        [SUM, SUB] = butterfly_R2(delay_out, in_elem);
+        
+        data_out = SUM;
+        delay_x(SUB, DELAY_SIZE, WRITE);
+    end 
+end
+</pre>
+<table style="border-collapse: collapse; border: solid;" border="1">
+<caption><b>Logged Variables for sdf_stage_2</b></caption>
+<tr><th>Variable</th><th>Type</th><th>Size</th><th>Class</th><th>Complex</th><th>Proposed<br>Signedness</th><th>Proposed<br>WL</th><th>Proposed<br>FL</th><th>Always<br>Whole Number</th><th>SimMin</th><th>SimMax</th></tr>
+<tr><td><code>DELAY_SIZE</code></td><td><code>Local</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>double</code></td><td><code>No</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>0</code></td><td><code><b>Yes</b></code></td><td><code>2</code></td><td><code>2</code></td></tr>
+<tr><td><code>READ</code></td><td><code>Local</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>logical</code></td><td><code></code></td><td><code></code></td><td><code></code></td><td><code></code></td><td><code><b>Yes</b></code></td><td><code>0</code></td><td><code>0</code></td></tr>
+<tr><td><code>SUB</code></td><td><code>Local</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>double</code></td><td><code>Yes</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>14</code></td><td><code>No</code></td><td><code>-78465</code></td><td><code>105112</code></td></tr>
+<tr><td><code>SUM</code></td><td><code>Local</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>double</code></td><td><code>Yes</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>14</code></td><td><code>No</code></td><td><code>-110690</code></td><td><code>102241</code></td></tr>
+<tr><td><code>W</code></td><td><code>Local</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>double</code></td><td><code>Yes</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>30</code></td><td><code>No</code></td><td><code>-1</code></td><td><code>1</code></td></tr>
+<tr><td><code>W8_ROM</code></td><td><code>Persistent</code></td><td><code>1&nbsp;x&nbsp;4</code></td><td><code>double</code></td><td><code>Yes</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>30</code></td><td><code>No</code></td><td><code>-1</code></td><td><code>1</code></td></tr>
+<tr><td><code>WRITE</code></td><td><code>Local</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>logical</code></td><td><code></code></td><td><code></code></td><td><code></code></td><td><code></code></td><td><code><b>Yes</b></code></td><td><code>1</code></td><td><code>1</code></td></tr>
+<tr><td><code>clk</code></td><td><code>Input</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>double</code></td><td><code>No</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>0</code></td><td><code><b>Yes</b></code></td><td><code>0</code></td><td><code>14</code></td></tr>
+<tr><td><code>counter</code></td><td><code>Local</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>double</code></td><td><code>No</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>0</code></td><td><code><b>Yes</b></code></td><td><code>0</code></td><td><code>3</code></td></tr>
+<tr><td><code>data_out</code></td><td><code>Output</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>double</code></td><td><code>Yes</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>14</code></td><td><code>No</code></td><td><code>-110690</code></td><td><code>102241</code></td></tr>
+<tr><td><code>delay_out</code></td><td><code>Local</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>double</code></td><td><code>Yes</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>14</code></td><td><code>No</code></td><td><code>-78465</code></td><td><code>105112</code></td></tr>
+<tr><td><code>in_elem</code></td><td><code>Input</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>double</code></td><td><code>Yes</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>15</code></td><td><code>No</code></td><td><code>-61145</code></td><td><code>58891</code></td></tr>
+<tr><td><code>twiddle_idx</code></td><td><code>Local</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>double</code></td><td><code>No</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>0</code></td><td><code><b>Yes</b></code></td><td><code>1</code></td><td><code>3</code></td></tr>
+</table>
+
+<h2>Function sdf_stage_3 </h2>
+
+<pre>
+function data_out = sdf_stage_3(in_elem, clk)%#codegen
+    DELAY_SIZE = 1;
+    READ = false;
+    WRITE = true;
+    
+    % Use 0-indexed counter for easier logic (0 to 7)
+    counter = mod(clk, 2); 
+
+    % Always read from the delay line first
+    delay_out = delay_x(0, DELAY_SIZE, READ);
+
+    if counter < 1 
+        % Cycle 0: Orange Path 
+        % 1. Multiply the delayed SUB by twiddle factor and output it
+        % 2. Store the incoming data into the delay line
+        
+        % no need for the twiddle factor since it is 1 always in this stage
+        data_out = delay_out * 1;
+        delay_x(in_elem, DELAY_SIZE, WRITE);
+    else 
+        % Cycle 1: Blue Path
+        % 1. Compute butterfly with delayed data (A) and incoming data (B)
+        % 2. Output the SUM
+        % 3. Store the SUB into the delay line
+        [SUM, SUB] = butterfly_R2(delay_out, in_elem);
+        
+        data_out = SUM;
+        delay_x(SUB, DELAY_SIZE, WRITE);
+    end 
+end
+</pre>
+<table style="border-collapse: collapse; border: solid;" border="1">
+<caption><b>Logged Variables for sdf_stage_3</b></caption>
+<tr><th>Variable</th><th>Type</th><th>Size</th><th>Class</th><th>Complex</th><th>Proposed<br>Signedness</th><th>Proposed<br>WL</th><th>Proposed<br>FL</th><th>Always<br>Whole Number</th><th>SimMin</th><th>SimMax</th></tr>
+<tr><td><code>DELAY_SIZE</code></td><td><code>Local</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>double</code></td><td><code>No</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>0</code></td><td><code><b>Yes</b></code></td><td><code>1</code></td><td><code>1</code></td></tr>
+<tr><td><code>READ</code></td><td><code>Local</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>logical</code></td><td><code></code></td><td><code></code></td><td><code></code></td><td><code></code></td><td><code><b>Yes</b></code></td><td><code>0</code></td><td><code>0</code></td></tr>
+<tr><td><code>SUB</code></td><td><code>Local</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>double</code></td><td><code>Yes</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>14</code></td><td><code>No</code></td><td><code>-123455.50597658128</code></td><td><code>120866.53163223462</code></td></tr>
+<tr><td><code>SUM</code></td><td><code>Local</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>double</code></td><td><code>Yes</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>13</code></td><td><code>No</code></td><td><code>-214962</code></td><td><code>196427</code></td></tr>
+<tr><td><code>WRITE</code></td><td><code>Local</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>logical</code></td><td><code></code></td><td><code></code></td><td><code></code></td><td><code></code></td><td><code><b>Yes</b></code></td><td><code>1</code></td><td><code>1</code></td></tr>
+<tr><td><code>clk</code></td><td><code>Input</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>double</code></td><td><code>No</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>0</code></td><td><code><b>Yes</b></code></td><td><code>0</code></td><td><code>14</code></td></tr>
+<tr><td><code>counter</code></td><td><code>Local</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>double</code></td><td><code>No</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>0</code></td><td><code><b>Yes</b></code></td><td><code>0</code></td><td><code>1</code></td></tr>
+<tr><td><code>data_out</code></td><td><code>Output</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>double</code></td><td><code>Yes</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>13</code></td><td><code>No</code></td><td><code>-214962</code></td><td><code>196427</code></td></tr>
+<tr><td><code>delay_out</code></td><td><code>Local</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>double</code></td><td><code>Yes</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>14</code></td><td><code>No</code></td><td><code>-123455.50597658128</code></td><td><code>120866.53163223462</code></td></tr>
+<tr><td><code>in_elem</code></td><td><code>Input</code></td><td><code>1&nbsp;x&nbsp;1</code></td><td><code>double</code></td><td><code>Yes</code></td><td><code>Signed</code></td><td><code>32</code></td><td><code>14</code></td><td><code>No</code></td><td><code>-110690</code></td><td><code>102241</code></td></tr>
+</table>
+</html>
